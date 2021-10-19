@@ -13,13 +13,13 @@ var (
 )
 
 func main() {
-	//LoadDll()
-	//GenerateRice()
-	createMainWindow()
+	GenerateRice()
+	//createMainWindow()
 }
 
 func createMainWindow() {
 	screenSize()
+	LoadDll()
 	//创建window窗口
 	//参数一表示创建窗口的样式
 	//SW_TITLEBAR 顶层窗口，有标题栏
