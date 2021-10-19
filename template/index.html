@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" window-icon="rice://template/img/App.ico">
+<html lang="zh-CN" window-icon="rice://template/img/App.ico" window-resizable="false">
 <head>
     <meta charset="gb2312">
     <title></title>
@@ -40,12 +40,12 @@
         $("#compress_btn").click(function(){
             let json = $('#json-input').val();
             let html = json.replace(/\s*/g,"");
-            document.getElementById("Canvas").innerHTML = "<textarea class='CodeContainer'>" + html + "</textarea>";
+            document.getElementById("Canvas").innerHTML = "<pre class='TextContainer'>" + html + "</pre>";
         });
         $("#decode_btn").click(function(){
             let json = $('#json-input').val();
             let html = decodeURI(json.replace(/\s*/g,""));
-            document.getElementById("Canvas").innerHTML = "<textarea class='CodeContainer'>" + html + "</textarea>";
+            document.getElementById("Canvas").innerHTML = "<pre class='TextContainer'>" + html + "</pre>";
         });
 
         

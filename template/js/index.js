@@ -74,7 +74,7 @@ function Format() {
         }
         var obj = eval("[" + json + "]");
         html = ProcessObject(obj[0], 0, false, false, false);
-        document.getElementById("Canvas").innerHTML = "<PRE class='CodeContainer'>" + html + "</PRE>";
+        document.getElementById("Canvas").innerHTML = "<pre class='CodeContainer'>" + html + "</pre>";
     } catch(e) {
         document.getElementById("Canvas").innerHTML = "json语法错误，不能格式化。错误信息:\n" + e.message;
     }
