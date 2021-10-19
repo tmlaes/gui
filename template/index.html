@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN" window-icon="rice://template/img/App.ico">
+<head>
+    <meta charset="gb2312">
+    <title></title>
+    <style>
+        @import url(css/index.css);
+    </style>
+</head>
+<body>
+<div class="json-main">
+    <div id="json-content" class="json-content">
+        <textarea id="json-input" autocomplete="off" placeholder="输入字符串......" autofocus></textarea>
+    </div>
+    <div class="json-btn">
+        <a id="format_btn">格式化</a>
+        <a id="compress_btn">压缩</a>
+        <a id="decode_btn">URL解码</a>
+    </div>
+    <div id="Canvas" class="json-renderer">
+    </div>
+</div>
+
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+    // var last_input = "";
+    $(function() {
+        function setSize() {
+            let div_content= document.getElementById('json-content');
+            let div_input = document.getElementById('json-input');
+            div_input.clientWidth=div_content.clientWidth
+            div_input.clientHeight=div_content.clientHeight
+        };
+        setSize()
+        $("#format_btn").click(function(){
+            Format();
+        });
+        $("#compress_btn").click(function(){
+            let json = $('#json-input').val();
+            let html = json.replace(/\s*/g,"");
+            document.getElementById("Canvas").innerHTML = "<textarea class='CodeContainer'>" + html + "</textarea>";
+        });
+        $("#decode_btn").click(function(){
+            let json = $('#json-input').val();
+            let html = decodeURI(json.replace(/\s*/g,""));
+            document.getElementById("Canvas").innerHTML = "<textarea class='CodeContainer'>" + html + "</textarea>";
+        });
+
+        
+        
+        // $("#json-input").on("change keyup paste", function() {
+        //     var current_input = $(this).val();
+        //     if(current_input == last_input) {
+        //         return;
+        //     }
+        //     last_input = current_input;
+        //     Process();
+        // });
+        // Process();
+    });
+
+</script>
+</html>

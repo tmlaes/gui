@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    position: absolute;
+    font-family: consolas;
+}
+.json-main{
+    font-size: 0;
+
+}
+.json-content {
+    width: 45%;
+    height: 98%;
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    float: left;
+}
+.json-renderer {
+    width: 45%;
+    height: 98%;
+    margin: 10px 10px 0 0;
+    display: inline-block;
+    float: right;
+    border-radius: 3px;
+}
+.json-btn{
+    width: 5%;
+    height: 98%;
+    margin-top: 10px;
+    display: inline-block;
+}
+.json-btn a {
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    　　text-decoration: none;
+    　　color: white;
+    　　padding: 7px 30px;
+    　　background-color: #FF9800;
+}
+textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+textarea:focus {
+    outline: none !important;
+    border: 1px solid #32CD32FF;
+}
+#Canvas {
+    font:14px/18px 'consolas';
+    background-color: #ECECEC;
+    color: #000000;
+    border: solid 1px #CECECE;
+}
+.ObjectBrace {
+    color: #00AA00;
+    font-weight: bold;
+}
+.ArrayBrace {
+    color: #0033FF;
+    font-weight: bold;
+}
+.PropertyName {
+    color: #CC0000;
+    font-weight: bold;
+}
+.String {
+    color: #007777;
+}
+.Number {
+    color: #AA00AA;
+}
+.Boolean {
+    color: #0000FF;
+}
+.Function {
+    color: #AA6633;
+    text-decoration: underline;
+}
+.Null {
+    color: #0000FF;
+}
+.Comma {
+    color: #000000;
+    font-weight: bold;
+}
+PRE.CodeContainer {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
