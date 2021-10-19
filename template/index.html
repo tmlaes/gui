@@ -25,7 +25,7 @@
 <script src="js/zepto.min.js"></script>
 <script src="js/index.js"></script>
 <script type="text/javascript">
-    // var last_input = "";
+    var last_input = "";
     $(function() {
         function setSize() {
             let div_content= document.getElementById('json-content');
@@ -47,18 +47,14 @@
             let html = decodeURI(json.replace(/\s*/g,""));
             document.getElementById("Canvas").innerHTML = "<pre class='TextContainer'>" + html + "</pre>";
         });
-
-        
-        
-        // $("#json-input").on("change keyup paste", function() {
-        //     var current_input = $(this).val();
-        //     if(current_input == last_input) {
-        //         return;
-        //     }
-        //     last_input = current_input;
-        //     Process();
-        // });
-        // Process();
+        $("#json-input").on("change keyup paste", function() {
+            var current_input = $(this).val();
+            if(current_input == last_input) {
+                return;
+            }
+            last_input = current_input;
+            Format()
+        });
     });
 
 </script>
