@@ -4,7 +4,6 @@ import (
 	"github.com/wj008/go-sciter"
 	"github.com/wj008/go-sciter/window"
 	"log"
-	"path/filepath"
 	"syscall"
 )
 
@@ -37,15 +36,15 @@ func createMainWindow() {
 	}
 
 	//通过sciter-rice来处理和加载资源
-	//HandleDataLoad(w.Sciter)
+	HandleDataLoad(w.Sciter)
 	//通过sciter-rice封装的路径调用文件
-	//w.LoadFile("rice://template/index.html")
+	w.LoadFile("rice://template/index.html")
 	//pwd, _ := os.Getwd()
-	fullpath, err := filepath.Abs("template/index.html")
-	if err != nil {
-		log.Fatal(err)
-	}
-	w.LoadFile(fullpath)
+	//fullpath, err := filepath.Abs("template/index.html")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//w.LoadFile(fullpath)
 	//设置标题
 	//w.SetTitle("表单")
 	//显示窗口

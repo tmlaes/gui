@@ -55,41 +55,9 @@ textarea:focus {
 }
 #Canvas {
     font:14px/18px 'consolas';
-    background-color: #ECECEC;
+    background-color: #C7EDCC;
     color: #000000;
     border: solid 1px #CECECE;
-}
-.ObjectBrace {
-    color: #00AA00;
-    font-weight: bold;
-}
-.ArrayBrace {
-    color: #0033FF;
-    font-weight: bold;
-}
-.PropertyName {
-    color: #CC0000;
-    font-weight: bold;
-}
-.String {
-    color: #007777;
-}
-.Number {
-    color: #AA00AA;
-}
-.Boolean {
-    color: #0000FF;
-}
-.Function {
-    color: #AA6633;
-    text-decoration: underline;
-}
-.Null {
-    color: #0000FF;
-}
-.Comma {
-    color: #000000;
-    font-weight: bold;
 }
 pre{
     behavior:selectable;
@@ -104,4 +72,62 @@ pre.TextContainer {
     margin-bottom: 0px;
     word-break: break-all;
     white-space: normal;
+}
+
+.json-document {
+    padding: 1em 2em;
+}
+
+ul.json-dict, ol.json-array {
+    list-style-type: none;
+    margin: 0 0 0 1px;
+    border-left: 1px dotted #ccc;
+    padding-left: 2em;
+}
+.json-property {
+    color: #CC0000;
+    font-weight: bold;
+}
+
+.json-string {
+    color: #0B7500;
+}
+.json-literal {
+    color: #1A01CC;
+    font-weight: bold;
+}
+
+/* Toggle button */
+a.json-toggle {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+}
+a.json-toggle:focus {
+    outline: none;
+}
+.json-toggle::before {
+    font-size: 1.5em;
+    color: #c0c0c0;
+    content: "\25BC"; /* down arrow */
+    display: inline-block;
+    width: 1.1em;
+    text-align: center;
+    line-height: 1em;
+    left: -1.2em;
+}
+a.json-toggle:hover::before {
+    color: #aaa;
+}
+a.json-toggle.collapsed::before {
+    transform: rotate(-90deg);
+}
+
+a.json-placeholder {
+    color: #aaa;
+    padding: 0 1em;
+    text-decoration: none;
+}
+a.json-placeholder:hover {
+    text-decoration: underline;
 }
