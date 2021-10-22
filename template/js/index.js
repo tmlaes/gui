@@ -6,7 +6,7 @@ $(function() {
         div_input.clientHeight=div_content.clientHeight
     };
     setSize()
-    function renderJson() {
+    $("#format_btn").click(function(){
         try {
             var input = $('#json-input').val()
             if (!input) {
@@ -19,9 +19,6 @@ $(function() {
         catch (error) {
             return $('#json-renderer').html("json格式错误:\n" + error.message);
         }
-    }
-    $("#format_btn").click(function(){
-        renderJson();
     });
     $("#compress_btn").click(function(){
         let json = $('#json-input').val();
@@ -34,6 +31,16 @@ $(function() {
         $('#json-renderer').html("<pre class='TextContainer'>" + html + "</pre>");
     });
     $("#json-input").on("change keyup paste", function() {
-        renderJson()
+        try {
+            var input = $(this).val()
+            if (!input) {
+                $('#json-renderer').html("");
+                return
+            }
+            var json = eval('[' + input + ']');
+            return $('#json-renderer').jsonViewer(json);
+        }catch (error) {
+            return $('#json-renderer').html("");
+        }
     });
 });

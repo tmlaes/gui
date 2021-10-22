@@ -30,9 +30,9 @@ func init() {
 	}
 	file8 := &embedded.EmbeddedFile{
 		Filename:    "js/index.js",
-		FileModTime: time.Unix(1634815094, 0),
+		FileModTime: time.Unix(1634870775, 0),
 
-		Content: string("$(function() {\r\n    function setSize() {\r\n        let div_content= document.getElementById('json-content');\r\n        let div_input = document.getElementById('json-input');\r\n        div_input.clientWidth=div_content.clientWidth\r\n        div_input.clientHeight=div_content.clientHeight\r\n    };\r\n    setSize()\r\n    function renderJson() {\r\n        try {\r\n            var input = $('#json-input').val()\r\n            if (!input) {\r\n                $('#json-renderer').html(\"\");\r\n                return\r\n            }\r\n            var json = eval('[' + input + ']');\r\n            return $('#json-renderer').jsonViewer(json);\r\n        }\r\n        catch (error) {\r\n            return $('#json-renderer').html(\"json格式错误:\\n\" + error.message);\r\n        }\r\n    }\r\n    $(\"#format_btn\").click(function(){\r\n        renderJson();\r\n    });\r\n    $(\"#compress_btn\").click(function(){\r\n        let json = $('#json-input').val();\r\n        let html = json.replace(/\\s*/g,\"\");\r\n        $('#json-renderer').html(\"<pre class='TextContainer'>\" + html + \"</pre>\");\r\n    });\r\n    $(\"#decode_btn\").click(function(){\r\n        let json = $('#json-input').val();\r\n        let html = decodeURI(json.replace(/\\s*/g,\"\"));\r\n        $('#json-renderer').html(\"<pre class='TextContainer'>\" + html + \"</pre>\");\r\n    });\r\n    $(\"#json-input\").on(\"change keyup paste\", function() {\r\n        renderJson()\r\n    });\r\n});"),
+		Content: string("$(function() {\r\n    function setSize() {\r\n        let div_content= document.getElementById('json-content');\r\n        let div_input = document.getElementById('json-input');\r\n        div_input.clientWidth=div_content.clientWidth\r\n        div_input.clientHeight=div_content.clientHeight\r\n    };\r\n    setSize()\r\n    $(\"#format_btn\").click(function(){\r\n        try {\r\n            var input = $('#json-input').val()\r\n            if (!input) {\r\n                $('#json-renderer').html(\"\");\r\n                return\r\n            }\r\n            var json = eval('[' + input + ']');\r\n            return $('#json-renderer').jsonViewer(json);\r\n        }\r\n        catch (error) {\r\n            return $('#json-renderer').html(\"json格式错误:\\n\" + error.message);\r\n        }\r\n    });\r\n    $(\"#compress_btn\").click(function(){\r\n        let json = $('#json-input').val();\r\n        let html = json.replace(/\\s*/g,\"\");\r\n        $('#json-renderer').html(\"<pre class='TextContainer'>\" + html + \"</pre>\");\r\n    });\r\n    $(\"#decode_btn\").click(function(){\r\n        let json = $('#json-input').val();\r\n        let html = decodeURI(json.replace(/\\s*/g,\"\"));\r\n        $('#json-renderer').html(\"<pre class='TextContainer'>\" + html + \"</pre>\");\r\n    });\r\n    $(\"#json-input\").on(\"change keyup paste\", function() {\r\n        try {\r\n            var input = $(this).val()\r\n            if (!input) {\r\n                $('#json-renderer').html(\"\");\r\n                return\r\n            }\r\n            var json = eval('[' + input + ']');\r\n            return $('#json-renderer').jsonViewer(json);\r\n        }catch (error) {\r\n            return $('#json-renderer').html(\"\");\r\n        }\r\n    });\r\n});"),
 	}
 	file9 := &embedded.EmbeddedFile{
 		Filename:    "js/jquery.json-viewer.js",
@@ -74,7 +74,7 @@ func init() {
 	}
 	dir7 := &embedded.EmbeddedDir{
 		Filename:   "js",
-		DirModTime: time.Unix(1634815094, 0),
+		DirModTime: time.Unix(1634870775, 0),
 		ChildFiles: []*embedded.EmbeddedFile{
 			file8, // "js/index.js"
 			file9, // "js/jquery.json-viewer.js"
